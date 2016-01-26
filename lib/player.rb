@@ -4,9 +4,5 @@ class Player
   def initialize(token)
     @token = token
   end
-
-  #def move(cell)
-  #  gets.strip
-  #end
-
+  
 end
