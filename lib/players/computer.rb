@@ -45,13 +45,13 @@ class Player::Computer < Player
   end
 
   def block(board)
-    block = combo_move?(board, self.opponent_token)
-    if block && block.count{|index| board.position(index + 1) == self.opponent_token} == 2
+    block = combo_move?(board, self.vs_token)
+    if block && block.count{|index| board.position(index + 1) == self.vs_token} == 2
       block.detect{|index| !board.taken?(index + 1)}
     end
   end
 
-  def opponent_token
+  def vs_token
     self.token == "X" ? "O" : "X"
   end
 end
